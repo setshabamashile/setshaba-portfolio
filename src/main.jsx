@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import {
-  ArrowUpRight, Github, Linkedin, Mail, Menu, X,
+  ArrowUpRight, Github, Linkedin, Mail, Menu, X, Download,
   Code2, Database, Cloud, Server, ExternalLink, Lock
 } from "lucide-react";
 import "./styles.css";
 
 const GITHUB = "https://github.com/setshabamashile";
-const LINKEDIN = "https://www.linkedin.com/in/setshaba-mashile-b76542340/";
+const LINKEDIN = "https://www.linkedin.com/in/setshaba-mashile-b76542340";
 const EMAIL = "mailto:setshabaseemashile@gmail.com";
+const CV = "/Setshaba_Mashile_CV_updated.pdf";
 
 const projects = [
   {
@@ -17,7 +18,8 @@ const projects = [
     description:
       "A ride-focused software project built around a modern frontend and backend architecture, demonstrating full-stack development and API integration.",
     stack: ["React", "Spring Boot", "Java", "SQL"],
-    github: "https://github.com/setshabamashile/SecureRide",
+    github: "https://secure-ride-zeta.vercel.app/login",
+    linkLabel: "View Live Project",
     featured: true
   },
   {
@@ -26,7 +28,8 @@ const projects = [
     description:
       "A practical business system for managing invoices and related operational data, with a database-driven architecture.",
     stack: ["Java", "SQL", "MySQL", "Web"],
-    github: GITHUB,
+    github: "https://invoice.mafundzhasystem.co.za/login.php",
+    linkLabel: "View Live Project",
     featured: true
   },
   {
@@ -109,12 +112,12 @@ function App() {
             <div className="eyebrow"><span className="status-dot"></span> Available for opportunities</div>
             <h1>Building software<br /><em>that matters.</em></h1>
             <p className="hero-text">
-              I'm <strong>Setshaba Mashile</strong>, a Computer Science developer focused on
+              I'm <strong>Setshaba Mashile</strong>, a Software Developer focused on
               building practical, reliable and user-friendly software solutions.
             </p>
             <div className="hero-actions">
               <a href="#projects" className="btn btn-primary">Explore my work <ArrowUpRight size={17} /></a>
-              <a href="#contact" className="btn btn-ghost">Let's connect</a>
+              <a href={CV} target="_blank" rel="noreferrer" className="btn btn-ghost">Download CV <Download size={17} /></a>
             </div>
             <div className="socials">
               <a href={GITHUB} target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={20}/></a>
@@ -152,8 +155,8 @@ function App() {
           <div className="about-grid">
             <div><h2>Curious by nature.<br/><span>Builder by choice.</span></h2></div>
             <div className="about-copy">
-              <p>I'm a final-year Computer Science student at <strong>Tshwane University of Technology</strong>, developing my skills across software development, databases and cloud fundamentals.</p>
-              <p>I enjoy taking a problem, understanding how it works, and turning it into a working software solution. My current focus includes Java, React, Spring Boot, JavaScript, SQL and AWS fundamentals.</p>
+              <p>I'm a <strong>Software Developer</strong> with a strong foundation in Computer Science, focused on building practical, reliable and user-friendly software solutions.</p>
+              <p>I enjoy taking complex problems, understanding how they work, and turning them into effective software solutions. My current focus includes Java, React, Spring Boot, JavaScript, SQL and AWS fundamentals.</p>
               <div className="facts">
                 <div><span>Education</span><strong>Computer Science</strong></div>
                 <div><span>Institution</span><strong>TUT</strong></div>
@@ -191,7 +194,7 @@ function App() {
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 <div className="tags">{project.stack.map(tag => <span key={tag}>{tag}</span>)}</div>
-                <a href={project.github} target="_blank" rel="noreferrer" className="project-link">Source / Details <ExternalLink size={15}/></a>
+                <a href={project.github} target="_blank" rel="noreferrer" className="project-link">{project.linkLabel || "Source / Details"} <ExternalLink size={15}/></a>
               </article>
             ))}
           </div>
@@ -232,6 +235,7 @@ function App() {
                 <a className="contact-btn" href={EMAIL}><Mail size={19}/> Email me <ArrowUpRight size={16}/></a>
                 <a className="contact-btn" href={GITHUB} target="_blank" rel="noreferrer"><Github size={19}/> GitHub <ArrowUpRight size={16}/></a>
                 <a className="contact-btn" href={LINKEDIN} target="_blank" rel="noreferrer"><Linkedin size={19}/> LinkedIn <ArrowUpRight size={16}/></a>
+                <a className="contact-btn" href={CV} target="_blank" rel="noreferrer"><Download size={19}/> Download CV <ArrowUpRight size={16}/></a>
               </div>
             </div>
           </div>
