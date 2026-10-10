@@ -475,7 +475,7 @@ function App() {
               <div className="timeline-date">Current</div>
 
               <div className="timeline-content">
-                <h3>Full-Stack Developer</h3>
+                <h3>Junior Full-Stack Developer</h3>
                 <p className="company">Mafundzha</p>
 
                 <p>
@@ -488,6 +488,7 @@ function App() {
 
                 <div className="tags">
                   <span>Java</span>
+                  <span>PHP</span>
                   <span>React</span>
                   <span>C#</span>
                   <span>.NET</span>
